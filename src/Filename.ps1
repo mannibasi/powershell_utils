@@ -1,18 +1,18 @@
 ﻿function Get-Formatted-Filename($filename) {
     $tempString = $filename
-    $tempString = Get-String-With-Collapsed-Spaces($tempString)
-    $tempString = Get-String-With-Underscores-For-Spaces($tempString)
+    $tempString = Get-Formatted-String-With-Collapsed-Spaces($tempString)
+    $tempString = Get-Formatted-String-With-Underscores-For-Spaces($tempString)
     return $tempString
 }
 
-function Get-String-With-Underscores-For-Spaces {
+function Get-Formatted-String-With-Underscores-For-Spaces {
     param(
         [string] $string
     )
     return $string.Replace(" ", "_");
 }
 
-function Get-String-With-Collapsed-Spaces {
+function Get-Formatted-String-With-Collapsed-Spaces {
     param(
         [string] $string
     )
