@@ -19,3 +19,9 @@ Describe "Get-String-With-Collapsed-Spaces" {
         Get-String-With-Collapsed-Spaces("Some other random string  1") | Should -Be 'Some other random string 1'
     }
 }
+
+Describe "Get-String-With-Collapsed-Spaces" {
+    It "Replace multi spaces with a single space" {
+        Get-String-With-Collapsed-Spaces("Some other  random   string    1") | Should -Be 'Some other random string 1'
+    }
+}
