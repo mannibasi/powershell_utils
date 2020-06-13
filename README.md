@@ -17,7 +17,7 @@ General PowerShell utility scripts
   - Scan code in src
   - Run tests in src
 
-### User Pester's New-Fixture command to create basic scaffolding:
+### Use Pester's New-Fixture command to create basic scaffolding:
 ```sh
 New-Fixture -Path "./src" -Name "FooBar"
 ```
