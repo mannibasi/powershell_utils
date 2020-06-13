@@ -2,6 +2,14 @@
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 . "$here\$sut"
 
+Describe "Rename-File" {
+    It "Rename file on test drive" {
+        New-Item -Path 'TestDrive:\Some file name  1.something' -itemType 'File'
+        Rename-File(Get-ChildItem -Path 'TestDrive:\Some file name  1.something')
+        Get-ChildItem -Path 'TestDrive:\' | Should -Be 'Some_file_name_1.something';
+    }
+}
+
 Describe "Get-Formatted-Filename" {
     It "Clean up filename with multiple spaces" {
         Get-Formatted-Filename("Some file name  1.something") | Should -Be 'Some_file_name_1.something'
