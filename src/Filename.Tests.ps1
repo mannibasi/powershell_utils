@@ -1,6 +1,6 @@
-﻿$here = Split-Path -Parent $MyInvocation.MyCommand.Path
-$sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
-. "$here\$sut"
+﻿BeforeAll {
+    . $PSScriptRoot/Filename.ps1
+}
 
 Describe "Rename-File" {
     It "Rename file on test drive" {
